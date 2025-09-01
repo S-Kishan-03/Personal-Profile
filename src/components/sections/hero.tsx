@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
