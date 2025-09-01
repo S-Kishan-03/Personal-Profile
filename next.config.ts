@@ -1,10 +1,12 @@
 import type {NextConfig} from 'next';
 
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
+
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/personal-profile-site/' : undefined,
-  basePath: process.env.NODE_ENV === 'production' ? '/personal-profile-site' : undefined,
+  assetPrefix: isGithubActions ? '/personal-profile-site/' : undefined,
+  basePath: isGithubActions ? '/personal-profile-site' : undefined,
   images: {
     unoptimized: true,
     remotePatterns: [

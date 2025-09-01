@@ -84,4 +84,5 @@ This project can also be deployed to GitHub Pages.
 2.  **Deployment**:
     - The workflow is defined in `.github/workflows/gh-pages.yml`.
     - Pushing to the `main` branch will automatically trigger the workflow, which builds your site and deploys it.
-    - Your site will be available at `https://<your-username>.github.io/personal-profile-site/`. (Note: If your repository has a different name, you will need to update the `basePath` in `next.config.ts`).
+    - Your site will be available at `https://<your-username>.github.io/personal-profile-site/`. (Note: If your repository has a different name, you will need to update the `assetPrefix` and `basePath` in `next.config.ts`).
+
