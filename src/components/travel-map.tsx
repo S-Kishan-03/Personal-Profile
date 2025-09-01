@@ -13,20 +13,25 @@ type TravelMapProps = {
   places: (typeof travelData)[0][];
 };
 
-function MapViewUpdater({ center, zoom }: { center: LatLngExpression, zoom: number }) {
+function MapUpdater({ center, zoom, selectedPlace }: { center: LatLngExpression, zoom: number, selectedPlace: (typeof travelData)[0] | null }) {
   const map = useMap();
+  
   useEffect(() => {
-    if (map) {
-      map.setView(center, zoom);
+    map.setView(center, zoom);
+  }, [center, zoom, map]);
+
+  useEffect(() => {
+    if (selectedPlace) {
+      map.flyTo(selectedPlace.coordinates, 13);
     }
-  }, [map, center, zoom]);
+  }, [selectedPlace, map]);
+
   return null;
 }
 
 export default function TravelMap({ center, zoom, selectedPlace, places }: TravelMapProps) {
-  // To avoid re-rendering MapContainer, which causes the error.
   if (typeof window === 'undefined') {
-    return null;
+    return <div className="h-96 w-full rounded-lg bg-muted animate-pulse" />;
   }
 
   return (
@@ -35,6 +40,7 @@ export default function TravelMap({ center, zoom, selectedPlace, places }: Trave
       zoom={zoom}
       scrollWheelZoom={false}
       style={{ height: '100%', width: '100%' }}
+      className='z-0'
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -45,12 +51,7 @@ export default function TravelMap({ center, zoom, selectedPlace, places }: Trave
           <Popup>{place.name}</Popup>
         </Marker>
       ))}
-      {selectedPlace && (
-        <Marker position={selectedPlace.coordinates}>
-          <Popup>{selectedPlace.name}</Popup>
-        </Marker>
-      )}
-      <MapViewUpdater center={center} zoom={zoom} />
+      <MapUpdater center={center} zoom={zoom} selectedPlace={selectedPlace} />
     </MapContainer>
   );
 }

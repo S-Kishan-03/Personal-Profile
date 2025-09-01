@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MapPin } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { Section } from '@/components/section';
@@ -23,10 +23,15 @@ export default function TravelSection() {
   const [selectedPlace, setSelectedPlace] = useState<(typeof travelData)[0] | null>(null);
 
   const handlePlaceClick = (place: (typeof travelData)[0]) => {
-    setMapCenter(place.coordinates);
-    setMapZoom(13);
-    setSelectedPlace(place);
+    // The map now updates itself via the MapUpdater component
+    setSelectedPlace(place); 
   };
+  
+  // Guard against hydration mismatch for initial state
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <Section id="travel" title="My Travels">
@@ -58,13 +63,13 @@ export default function TravelSection() {
           </Card>
         </div>
         <div className="md:col-span-2">
-           <div className="h-96 w-full rounded-lg overflow-hidden shadow-lg">
-            <TravelMap 
+           <div className="h-96 w-full rounded-lg overflow-hidden shadow-lg border">
+            {isClient && <TravelMap 
               center={mapCenter}
               zoom={mapZoom}
               selectedPlace={selectedPlace}
               places={travelData}
-            />
+            />}
            </div>
         </div>
       </div>
