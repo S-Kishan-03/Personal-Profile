@@ -53,35 +53,30 @@ This is a modern, responsive personal profile website for a Software Engineer, b
 
 All personal data is located in `src/lib/profile-data.ts`. You can edit this file to update your information.
 
-## Deployment
-
-This project is configured for deployment to both Firebase Hosting and GitHub Pages.
-
-### Deployment with Firebase and GitHub Actions
+## Deployment with Firebase and GitHub Actions
 
 This project is set up for automated deployments to Firebase Hosting when you push to the `main` branch.
 
-1.  **Firebase Setup**:
-    - Make sure you have a Firebase project. If not, create one in the [Firebase Console](https://console.firebase.google.com/).
-    - Set the project ID in `firebase.json`.
-    - Authenticate with Firebase: `firebase login`
-    - Initialize App Hosting: `firebase apphosting:backends:create`
-    - Follow the prompts, connecting it to your GitHub repository. This will set up the necessary service accounts and secrets in your repository.
+### 1. Firebase Setup
 
-2.  **GitHub Setup**:
-    - The deployment workflow is defined in `.github/workflows/deploy.yml`. The `firebase apphosting:backends:create` command should automatically create the necessary secrets in your GitHub repository.
-    - Every push to the `main` branch will trigger the GitHub Action, deploying your site to Firebase Hosting.
+1.  Make sure you have a Firebase project. If not, create one in the [Firebase Console](https://console.firebase.google.com/).
+2.  Set the project ID in `firebase.json`.
+3.  Authenticate with Firebase:
+    ```bash
+    firebase login
+    ```
+4.  Initialize App Hosting:
+    ```bash
+    firebase apphosting:backends:create
+    ```
+    Follow the prompts, connecting it to your GitHub repository. This will set up the necessary service accounts and secrets in your repository.
 
-### Deployment with GitHub Pages
+### 2. GitHub Setup
 
-This project can also be deployed to GitHub Pages.
+The deployment workflow is defined in `.github/workflows/deploy.yml`.
 
-1.  **GitHub Repository Setup**:
-    - Navigate to your repository's **Settings** tab.
-    - In the left sidebar, click on **Pages**.
-    - Under "Build and deployment", select **GitHub Actions** as the source.
+1.  **Firebase Service Account Secret**:
+    The `firebase apphosting:backends:create` command should automatically create a `FIREBASE_SERVICE_ACCOUNT_<your_project_id>` secret in your GitHub repository. The workflow file `.github/workflows/deploy.yml` uses this secret. Ensure the secret name in the workflow file matches the one in your repository settings.
 
-2.  **Deployment**:
-    - The workflow is defined in `.github/workflows/gh-pages.yml`.
-    - Pushing to the `main` branch will automatically trigger the workflow, which builds your site and deploys it.
-    - Your site will be available at `https://<your-username>.github.io/personal-profile-site/`. (Note: If your repository has a different name, you will need to update the `basePath` in `next.config.ts`).
+2.  **Push to `main`**:
+    Once the secrets are in place, every push to the `main` branch will trigger the GitHub Action workflow, which will build and deploy your site to Firebase Hosting.
