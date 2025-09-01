@@ -1,21 +1,19 @@
 "use client";
 
 import { useState } from 'react';
-import { MapPin } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import { MapPin } from 'lucide-react';
 import { Section } from '@/components/section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { travelData } from '@/lib/profile-data';
+import { Skeleton } from '@/components/ui/skeleton';
 
-// Dynamically import the map component with SSR turned off.
-const TravelMap = dynamic(
-  () => import('@/components/travel-map'),
-  { 
-    ssr: false,
-    loading: () => <div className="h-96 w-full rounded-lg bg-muted animate-pulse" />
-  }
-);
+// Dynamically import the TravelMap component with SSR turned off
+const TravelMap = dynamic(() => import('@/components/travel-map'), {
+  ssr: false,
+  loading: () => <Skeleton className="h-96 w-full rounded-lg" />,
+});
 
 export default function TravelSection() {
   const [selectedPlace, setSelectedPlace] = useState<(typeof travelData)[0] | null>(null);
@@ -41,7 +39,7 @@ export default function TravelSection() {
                   <li key={place.name}>
                     <Button
                       variant="ghost"
-                      className={`w-full justify-start gap-2 ${selectedPlace?.name === place.name ? 'bg-accent' : ''}`}
+                      className={`w-full justify-start gap-2 ${selectedPlace?.name === place.name ? 'bg-accent/80' : ''}`}
                       onClick={() => handlePlaceClick(place)}
                     >
                       <MapPin className="w-4 h-4 text-primary/70" />

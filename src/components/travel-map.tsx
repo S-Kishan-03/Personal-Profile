@@ -3,7 +3,7 @@
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import type { LatLngExpression } from 'leaflet';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import L from 'leaflet';
 
 // Leaflet's default icons can break with webpack. This is the official fix.
@@ -45,8 +45,18 @@ function MapUpdater({ selectedPlace }: { selectedPlace: TravelDataItem | null })
 }
 
 export default function TravelMap({ selectedPlace, places }: TravelMapProps) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const initialCenter: LatLngExpression = [20.5937, 78.9629]; // Centered on India
   const initialZoom = 4;
+
+  if (!isClient) {
+    return <div className="h-96 w-full rounded-lg bg-muted animate-pulse" />;
+  }
 
   return (
     <MapContainer
