@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -50,7 +49,8 @@ export default function TravelLogSection() {
                       <Image
                         src={place.image}
                         alt={place.name}
-                        fill
+                        width={600}
+                        height={400}
                         data-ai-hint={place.aiHint}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
