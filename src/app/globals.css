@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 222.2 47.4% 11.2%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-    --primary: 210 40% 50%;
+    --background: 220 13% 98%;
+    --foreground: 224 10% 10%;
+    --card: 220 13% 98%;
+    --card-foreground: 224 10% 10%;
+    --popover: 220 13% 98%;
+    --popover-foreground: 224 10% 10%;
+    --primary: 215 90% 55%; /* A strong, industrial blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 190 80% 45%;
+    --secondary: 220 10% 90%;
+    --secondary-foreground: 224 10% 10%;
+    --muted: 220 10% 90%;
+    --muted-foreground: 224 10% 40%;
+    --accent: 30 95% 55%; /* A contrasting orange/gold for highlights */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 210 40% 50%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 215 90% 55%;
     --radius: 0.5rem;
   }
  
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 210 40% 50%;
+    --background: 224 15% 15%;
+    --foreground: 215 15% 85%;
+    --card: 224 15% 15%;
+    --card-foreground: 215 15% 85%;
+    --popover: 224 15% 15%;
+    --popover-foreground: 215 15% 85%;
+    --primary: 215 85% 65%; /* A strong, industrial blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 222.2 47.4% 11.2%;
+    --secondary: 224 15% 25%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 222.2 47.4% 11.2%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 190 80% 45%;
+    --muted: 224 15% 25%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 35 90% 60%; /* A contrasting orange/gold for highlights */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 222.2 47.4% 11.2%;
-    --input: 222.2 47.4% 11.2%;
-    --ring: 210 40% 50%;
+    --border: 224 15% 25%;
+    --input: 224 15% 25%;
+    --ring: 215 85% 65%;
   }
 }
  

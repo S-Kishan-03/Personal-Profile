@@ -59,11 +59,11 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-2xl opacity-30 -z-10"></div>
         <Avatar className="w-64 h-64 md:w-80 md:h-80 border-4 border-card">
           <Image
-            src="https://picsum.photos/400/400"
+            src="https://picsum.photos/seed/tech/400/400"
             alt={profileData.name}
             width={400}
             height={400}
-            data-ai-hint="engineering gears"
+            data-ai-hint="engineering software"
             className="object-cover"
           />
           <AvatarFallback>{profileData.name.charAt(0)}</AvatarFallback>
