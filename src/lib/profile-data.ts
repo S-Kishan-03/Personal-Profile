@@ -138,3 +138,14 @@ export const projectData = [
       link: "#"
     }
 ];
+
+export const travelData = [
+  {
+    name: 'Rameshwaram',
+    coordinates: [9.2876, 79.3129] as [number, number],
+  },
+  {
+    name: 'Madurai',
+    coordinates: [9.9252, 78.1198] as [number, number],
+  },
+];

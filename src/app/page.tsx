@@ -6,6 +6,7 @@ import ExperienceSection from '@/components/sections/experience';
 import HeroSection from '@/components/sections/hero';
 import ProjectsSection from '@/components/sections/projects';
 import SkillsSection from '@/components/sections/skills';
+import TravelSection from '@/components/sections/travel';
 import Footer from '@/components/footer';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
           <ProjectsSection />
           <EducationSection />
           <CertificationsAndHonorsSection />
+          <TravelSection />
         </div>
       </main>
       <Footer />
