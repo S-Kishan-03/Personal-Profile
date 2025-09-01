@@ -76,27 +76,6 @@ export const profileData = {
         'Developed algorithms to extract, store, and analyze surface data from STEP files to sort features like holes and pockets.',
       ],
     },
-    {
-      company: 'Vellore Institute of Technology',
-      role: 'Masters Student',
-      duration: 'May 2019 - October 2020 (1 year 6 months)',
-      location: 'Chennai, Tamil Nadu, India',
-      details: [],
-    },
-    {
-      company: 'Steel Authority of India Limited',
-      role: 'Trainee',
-      duration: 'June 2017 - June 2017 (1 month)',
-      location: 'Bhilai Area, India',
-      details: [],
-    },
-    {
-      company: 'Jindal Steel & Power Ltd.',
-      role: 'Trainee',
-      duration: 'June 2016 - July 2016 (2 months)',
-      location: 'Raipur Area, India',
-      details: [],
-    },
   ],
   education: [
     {
@@ -155,4 +134,41 @@ export const projectData = [
   },
 ];
 
-export const travelData: { name: string; coordinates: [number, number] }[] = [];
+export const travelData = [
+  {
+    name: 'Rameswaram',
+    description: 'A serene island town known for its magnificent temple.',
+    image: 'https://picsum.photos/seed/rameswaram/600/400',
+    aiHint: 'temple coast'
+  },
+  {
+    name: 'Madurai',
+    description: 'Home to the historic Meenakshi Amman Temple.',
+    image: 'https://picsum.photos/seed/madurai/600/400',
+    aiHint: 'ancient temple'
+  },
+  {
+    name: 'Goa',
+    description: 'Relaxing on the beautiful beaches of the Arabian Sea.',
+    image: 'https://picsum.photos/seed/goa/600/400',
+    aiHint: 'beach sunset'
+  },
+  {
+    name: 'Hampi',
+    description: 'Exploring the stunning ruins of the Vijayanagara Empire.',
+    image: 'https://picsum.photos/seed/hampi/600/400',
+    aiHint: 'ancient ruins'
+  },
+  {
+    name: 'Delhi',
+    description: 'Experiencing the vibrant culture and history of the capital.',
+    image: 'https://picsum.photos/seed/delhi/600/400',
+    aiHint: 'historic monument'
+  },
+   {
+    name: 'Kanyakumari',
+    description: 'Witnessing the confluence of three oceans at India\'s tip.',
+    image: 'https://picsum.photos/seed/kanyakumari/600/400',
+    aiHint: 'ocean sunrise'
+  }
+];

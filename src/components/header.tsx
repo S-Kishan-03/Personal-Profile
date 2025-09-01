@@ -11,6 +11,7 @@ const navLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#travel-log", label: "Travel Log"},
 ]
 
 export default function Header() {

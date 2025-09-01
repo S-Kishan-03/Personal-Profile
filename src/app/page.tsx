@@ -8,6 +8,7 @@ import ProjectsSection from '@/components/sections/projects';
 import SkillsSection from '@/components/sections/skills';
 import Footer from '@/components/footer';
 import BackgroundAnimation from '@/components/background-animation';
+import TravelLogSection from '@/components/sections/travel-log';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
             <SkillsSection />
             <ExperienceSection />
             <ProjectsSection />
+            <TravelLogSection />
             <EducationSection />
             <CertificationsAndHonorsSection />
           </div>
