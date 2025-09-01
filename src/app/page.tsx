@@ -7,23 +7,27 @@ import HeroSection from '@/components/sections/hero';
 import ProjectsSection from '@/components/sections/projects';
 import SkillsSection from '@/components/sections/skills';
 import Footer from '@/components/footer';
+import BackgroundAnimation from '@/components/background-animation';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto max-w-5xl px-4 pt-24 md:pt-32">
-        <div className="space-y-24 md:space-y-32 pb-24">
-          <HeroSection />
-          <AboutSection />
-          <SkillsSection />
-          <ExperienceSection />
-          <ProjectsSection />
-          <EducationSection />
-          <CertificationsAndHonorsSection />
-        </div>
-      </main>
-      <Footer />
+    <div className="flex flex-col min-h-screen bg-background relative">
+      <BackgroundAnimation />
+      <div className="relative z-10">
+        <Header />
+        <main className="container mx-auto max-w-5xl px-4 pt-24 md:pt-32">
+          <div className="space-y-24 md:space-y-32 pb-24">
+            <HeroSection />
+            <AboutSection />
+            <SkillsSection />
+            <ExperienceSection />
+            <ProjectsSection />
+            <EducationSection />
+            <CertificationsAndHonorsSection />
+          </div>
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
