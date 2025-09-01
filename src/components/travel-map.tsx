@@ -16,12 +16,19 @@ type TravelMapProps = {
 function MapViewUpdater({ center, zoom }: { center: LatLngExpression, zoom: number }) {
   const map = useMap();
   useEffect(() => {
-    map.setView(center, zoom);
+    if (map) {
+      map.setView(center, zoom);
+    }
   }, [map, center, zoom]);
   return null;
 }
 
 export default function TravelMap({ center, zoom, selectedPlace, places }: TravelMapProps) {
+  // To avoid re-rendering MapContainer, which causes the error.
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
   return (
     <MapContainer
       center={center}
