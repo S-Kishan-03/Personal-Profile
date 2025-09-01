@@ -63,7 +63,7 @@ export default function HeroSection() {
             alt={profileData.name}
             width={400}
             height={400}
-            data-ai-hint="man portrait"
+            data-ai-hint="engineering gears"
             className="object-cover"
           />
           <AvatarFallback>{profileData.name.charAt(0)}</AvatarFallback>
