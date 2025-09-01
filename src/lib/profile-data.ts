@@ -5,7 +5,7 @@ export const profileData = {
   contact: {
     email: "s.kishan9603@gmail.com",
     linkedin: "https://www.linkedin.com/in/s-kishan-03",
-    github: "https://github.com/kishan-s-03"
+    github: "https://github.com/S-Kishan-03"
   },
   summary: "CAD Customization Developer | Bridging Mechanical Engineering & Software Innovation. With 4+ years of specialized experience in C# and NX Open development, I engineer high-impact CAD customization solutions that accelerate design workflows and boost productivity for engineering teams. My dual expertise in Mechanical engineering principles and Software development enables me to: design intuitive plugins, automation scripts, and tools that solve real-world design bottlenecks; reduce repetitive tasks through tailored NX Open applications; cut prototype iteration time via seamless CAD-process integration; and deliver robust, maintainable code aligned with manufacturing requirements. Passionate about leveraging technology to transform complex design challenges into efficient, scalable systems. Currently focused on Additive Manufacturing + software development.",
   skills: {
