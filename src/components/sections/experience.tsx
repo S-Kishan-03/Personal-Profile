@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Briefcase, Code2, Factory, PlaneTakeoff, School } from "lucide-react"
+import { Briefcase, Code2, Factory, PlaneTakeoff, School, CheckCircle } from "lucide-react"
 
 import { Section } from "@/components/section"
 import { profileData } from "@/lib/profile-data"
@@ -33,7 +33,7 @@ export default function ExperienceSection() {
               className="flex items-start gap-4 md:gap-6"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 text-primary border-2 border-primary/20 shrink-0 mt-1">
@@ -44,6 +44,16 @@ export default function ExperienceSection() {
                 <p className="font-medium text-muted-foreground">{job.company}</p>
                 <p className="text-sm text-muted-foreground/80">{job.duration}</p>
                 <p className="text-sm text-muted-foreground/80">{job.location}</p>
+                {job.details && job.details.length > 0 && (
+                  <ul className="mt-2 space-y-2">
+                    {job.details.map((detail, i) => (
+                      <li key={i} className="flex items-start text-muted-foreground text-sm">
+                        <CheckCircle className="w-4 h-4 mr-2 mt-1 shrink-0 text-primary/70" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </motion.div>
           ))}
