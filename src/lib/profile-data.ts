@@ -108,6 +108,55 @@ export const profileData = {
     'Git from Scratch',
   ],
   honorsAndAwards: ['GATE ME Qualified 2019', 'Silver Medalist'],
+  travelLog: [
+    {
+      year: 2025,
+      places: [
+        {
+          name: "Rameswaram",
+          description: "A serene island town known for its magnificent temple.",
+          image: "https://picsum.photos/seed/rameswaram/600/400",
+          aiHint: "temple coast"
+        },
+        {
+          name: "Madurai",
+          description: "Home to the historic Meenakshi Amman Temple.",
+          image: "https://picsum.photos/seed/madurai/600/400",
+          aiHint: "ancient temple"
+        },
+        {
+          name: "Tirchy",
+          description: "Famous for its ancient temples and rock fort.",
+          image: "https://picsum.photos/seed/tirchy/600/400",
+          aiHint: "rock fort"
+        },
+        {
+          name: "Tanjavur",
+          description: "A city renowned for its Chola dynasty temples.",
+          image: "https://picsum.photos/seed/tanjavur/600/400",
+          aiHint: "historic architecture"
+        },
+        {
+          name: "Thiruvannimalai",
+          description: "A spiritual town with the revered Annamalaiyar Temple.",
+          image: "https://picsum.photos/seed/thiruvannimalai/600/400",
+          aiHint: "holy mountain"
+        },
+        {
+          name: "Dharamsthala",
+          description: "A famous pilgrimage center on the banks of the Nethravathi River.",
+          image: "https://picsum.photos/seed/dharamsthala/600/400",
+          aiHint: "temple gate"
+        },
+        {
+          name: "Subramanya",
+          description: "A village known for the Kukke Subramanya Temple.",
+          image: "https://picsum.photos/seed/subramanya/600/400",
+          aiHint: "temple entrance"
+        }
+      ]
+    }
+  ]
 };
 
 export const projectData = [
@@ -132,43 +181,4 @@ export const projectData = [
     tags: ['Next.js', 'React', 'Tailwind CSS', 'Firebase'],
     link: '#',
   },
-];
-
-export const travelData = [
-  {
-    name: 'Rameswaram',
-    description: 'A serene island town known for its magnificent temple.',
-    image: 'https://picsum.photos/seed/rameswaram/600/400',
-    aiHint: 'temple coast'
-  },
-  {
-    name: 'Madurai',
-    description: 'Home to the historic Meenakshi Amman Temple.',
-    image: 'https://picsum.photos/seed/madurai/600/400',
-    aiHint: 'ancient temple'
-  },
-  {
-    name: 'Goa',
-    description: 'Relaxing on the beautiful beaches of the Arabian Sea.',
-    image: 'https://picsum.photos/seed/goa/600/400',
-    aiHint: 'beach sunset'
-  },
-  {
-    name: 'Hampi',
-    description: 'Exploring the stunning ruins of the Vijayanagara Empire.',
-    image: 'https://picsum.photos/seed/hampi/600/400',
-    aiHint: 'ancient ruins'
-  },
-  {
-    name: 'Delhi',
-    description: 'Experiencing the vibrant culture and history of the capital.',
-    image: 'https://picsum.photos/seed/delhi/600/400',
-    aiHint: 'historic monument'
-  },
-   {
-    name: 'Kanyakumari',
-    description: 'Witnessing the confluence of three oceans at India\'s tip.',
-    image: 'https://picsum.photos/seed/kanyakumari/600/400',
-    aiHint: 'ocean sunrise'
-  }
 ];
