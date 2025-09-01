@@ -1,12 +1,12 @@
 import type {NextConfig} from 'next';
 
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+const repo = process.env.GITHUB_REPOSITORY?.replace(/.*?\//, '') || 'personal-profile-site';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   output: 'export',
-  assetPrefix: isGithubActions ? '/personal-profile-site/' : undefined,
-  basePath: isGithubActions ? '/personal-profile-site' : undefined,
+  assetPrefix: isGithubActions ? `/${repo}/` : undefined,
+  basePath: isGithubActions ? `/${repo}` : undefined,
   images: {
     unoptimized: true,
     remotePatterns: [
