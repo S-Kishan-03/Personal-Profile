@@ -1,30 +1,21 @@
 "use client";
 
 import { useState } from 'react';
-import { MapPin, ZoomIn } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { Section } from '@/components/section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { travelData } from '@/lib/profile-data';
 
-// Dynamically import the map component to avoid SSR issues
-const MapContainer = dynamic(
-  () => import('react-leaflet').then(mod => mod.MapContainer),
-  { ssr: false }
+const TravelMap = dynamic(
+  () => import('@/components/travel-map'),
+  { 
+    ssr: false,
+    loading: () => <div className="h-96 w-full rounded-lg bg-muted animate-pulse" />
+  }
 );
-const TileLayer = dynamic(
-  () => import('react-leaflet').then(mod => mod.TileLayer),
-  { ssr: false }
-);
-const Marker = dynamic(
-  () => import('react-leaflet').then(mod => mod.Marker),
-  { ssr: false }
-);
-const Popup = dynamic(
-  () => import('react-leaflet').then(mod => mod.Popup),
-  { ssr: false }
-);
+
 
 export default function TravelSection() {
   const [mapCenter, setMapCenter] = useState<[number, number]>([20, 0]);
@@ -68,22 +59,12 @@ export default function TravelSection() {
         </div>
         <div className="md:col-span-2">
            <div className="h-96 w-full rounded-lg overflow-hidden shadow-lg">
-             <MapContainer center={mapCenter} zoom={mapZoom} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              {travelData.map(place => (
-                <Marker key={place.name} position={place.coordinates}>
-                  <Popup>{place.name}</Popup>
-                </Marker>
-              ))}
-              {selectedPlace && (
-                <Marker position={selectedPlace.coordinates}>
-                  <Popup>{selectedPlace.name}</Popup>
-                </Marker>
-              )}
-            </MapContainer>
+            <TravelMap 
+              center={mapCenter}
+              zoom={mapZoom}
+              selectedPlace={selectedPlace}
+              places={travelData}
+            />
            </div>
         </div>
       </div>
