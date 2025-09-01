@@ -4,8 +4,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { profileData } from '@/lib/profile-data';
 import './globals.css';
-import 'leaflet/dist/leaflet.css';
-
 
 const poppins = Poppins({
   subsets: ['latin'],
