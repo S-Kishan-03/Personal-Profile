@@ -115,44 +115,44 @@ export const profileData = {
       places: [
         {
           name: "Rameswaram",
-          description: "A serene island town known for its magnificent temple.",
-          image: "https://picsum.photos/seed/rameswaram/600/400",
-          aiHint: "temple coast"
+          description: "Ramanathaswamy Temple's grand gopuram and corridors",
+          image: "https://upload.wikimedia.org/wikipedia/commons/6/65/Ramanathaswamy_Temple%2C_Rameswaram.jpg",
+          aiHint: "temple gopuram"
         },
         {
           name: "Madurai",
-          description: "Home to the historic Meenakshi Amman Temple.",
-          image: "https://picsum.photos/seed/madurai/600/400",
+          description: "Meenakshi Amman Temple's colorful gateway tower (gopuram)",
+          image: "https://upload.wikimedia.org/wikipedia/commons/1/18/Meenakshi_Amman_temple_tower.jpg",
+          aiHint: "colorful temple"
+        },
+        {
+          name: "Tiruchirappalli (Trichy)",
+          description: "Rock Fort Temple perched atop a natural rock outcrop",
+          image: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Tiruchirappalli_Rockfort.jpg",
+          aiHint: "rock temple"
+        },
+        {
+          name: "Thanjavur",
+          description: "Brihadeeswarar Temple, the colossal Chola-era Shiva temple ('Big Temple')",
+          image: "https://upload.wikimedia.org/wikipedia/commons/2/26/Brihadeeswarar_Temple_in_Tanjore.jpg",
           aiHint: "ancient temple"
         },
         {
-          name: "Tirchy",
-          description: "Famous for its ancient temples and rock fort.",
-          image: "https://picsum.photos/seed/tirchy/600/400",
-          aiHint: "rock fort"
+          name: "Thiruvannamalai",
+          description: "Arunachaleswarar Temple at the foot of the sacred Annamalai Hill",
+          image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arunachalesvara_Temple%2C_Tiruvannamalai.jpg",
+          aiHint: "hill temple"
         },
         {
-          name: "Tanjavur",
-          description: "A city renowned for its Chola dynasty temples.",
-          image: "https://picsum.photos/seed/tanjavur/600/400",
-          aiHint: "historic architecture"
+          name: "Dharmasthala",
+          description: "Dharmasthala Temple with the famous Bahubali (Gommateshwara) statue",
+          image: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Bahubali_statue%2C_Dharmasthala.jpg",
+          aiHint: "giant statue"
         },
         {
-          name: "Thiruvannimalai",
-          description: "A spiritual town with the revered Annamalaiyar Temple.",
-          image: "https://picsum.photos/seed/thiruvannimalai/600/400",
-          aiHint: "holy mountain"
-        },
-        {
-          name: "Dharamsthala",
-          description: "A famous pilgrimage center on the banks of the Nethravathi River.",
-          image: "https://picsum.photos/seed/dharamsthala/600/400",
-          aiHint: "temple gate"
-        },
-        {
-          name: "Subramanya",
-          description: "A village known for the Kukke Subramanya Temple.",
-          image: "https://picsum.photos/seed/subramanya/600/400",
+          name: "Subramanya (Karnataka)",
+          description: "Kukke Subramanya Temple dedicated to Lord Murugan",
+          image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Kukke_Subramanya_Temple.jpg",
           aiHint: "temple entrance"
         }
       ]
