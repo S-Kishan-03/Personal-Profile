@@ -48,7 +48,7 @@ export default function TravelLogSection() {
                     <div className="relative h-48 w-full overflow-hidden">
                       <Image
                         src={place.image}
-                        alt={place.name}
+                        alt={`Image of ${place.name}`}
                         width={600}
                         height={400}
                         data-ai-hint={place.aiHint}
