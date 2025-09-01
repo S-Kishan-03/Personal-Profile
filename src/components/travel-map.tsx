@@ -3,41 +3,55 @@
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import type { LatLngExpression } from 'leaflet';
-import { travelData } from '@/lib/profile-data';
 import { useEffect } from 'react';
+import L from 'leaflet';
 
-type TravelMapProps = {
-  center: LatLngExpression;
-  zoom: number;
-  selectedPlace: (typeof travelData)[0] | null;
-  places: (typeof travelData)[0][];
+// Leaflet's default icons can break with webpack. This is the official fix.
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+let DefaultIcon = L.icon({
+    iconUrl: icon.src,
+    shadowUrl: iconShadow.src,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41]
+});
+L.Marker.prototype.options.icon = DefaultIcon;
+
+
+type TravelDataItem = {
+    name: string;
+    coordinates: [number, number];
 };
 
-function MapUpdater({ center, zoom, selectedPlace }: { center: LatLngExpression, zoom: number, selectedPlace: (typeof travelData)[0] | null }) {
+type TravelMapProps = {
+  selectedPlace: TravelDataItem | null;
+  places: TravelDataItem[];
+};
+
+function MapUpdater({ selectedPlace }: { selectedPlace: TravelDataItem | null }) {
   const map = useMap();
   
   useEffect(() => {
-    map.setView(center, zoom);
-  }, [center, zoom, map]);
-
-  useEffect(() => {
     if (selectedPlace) {
-      map.flyTo(selectedPlace.coordinates, 13);
+      // Fly to the selected place's coordinates with a smooth animation
+      map.flyTo(selectedPlace.coordinates, 13, {
+        animate: true,
+        duration: 1.5
+      });
     }
   }, [selectedPlace, map]);
 
   return null;
 }
 
-export default function TravelMap({ center, zoom, selectedPlace, places }: TravelMapProps) {
-  if (typeof window === 'undefined') {
-    return <div className="h-96 w-full rounded-lg bg-muted animate-pulse" />;
-  }
+export default function TravelMap({ selectedPlace, places }: TravelMapProps) {
+  const initialCenter: LatLngExpression = [20.5937, 78.9629]; // Centered on India
+  const initialZoom = 4;
 
   return (
     <MapContainer
-      center={center}
-      zoom={zoom}
+      center={initialCenter}
+      zoom={initialZoom}
       scrollWheelZoom={false}
       style={{ height: '100%', width: '100%' }}
       className='z-0'
@@ -51,7 +65,7 @@ export default function TravelMap({ center, zoom, selectedPlace, places }: Trave
           <Popup>{place.name}</Popup>
         </Marker>
       ))}
-      <MapUpdater center={center} zoom={zoom} selectedPlace={selectedPlace} />
+      <MapUpdater selectedPlace={selectedPlace} />
     </MapContainer>
   );
 }
