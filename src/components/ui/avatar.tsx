@@ -48,3 +48,8 @@ const AvatarFallback = React.forwardRef<
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
 export { Avatar, AvatarImage, AvatarFallback }
+
+<Avatar>
+  <AvatarImage src="/resources/1751999008963.png" alt="Kishan S" />
+  <AvatarFallback>KS</AvatarFallback>
+</Avatar>

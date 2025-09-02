@@ -45,7 +45,7 @@ export default function TravelLogSection() {
                   viewport={{ once: true }}
                 >
                   <Card className="h-full flex flex-col group overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/20">
-                    <div className="relative h-48 w-full overflow-hidden">
+                    {/* <div className="relative h-48 w-full overflow-hidden">
                       <Image
                         src={place.image}
                         alt={`Image of ${place.name}`}
@@ -54,7 +54,7 @@ export default function TravelLogSection() {
                         data-ai-hint={place.aiHint}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
-                    </div>
+                    </div> */}
                     <CardHeader>
                       <CardTitle>{place.name}</CardTitle>
                       <CardDescription>{place.description}</CardDescription>
